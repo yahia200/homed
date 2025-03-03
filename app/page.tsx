@@ -28,7 +28,7 @@ function page() {
 
 		await login_action(name, password).then(res => {
 			if (res.success) {
-				toast.success(res.message);
+				window.location.href = '/home';
 			} else {
 				toast.error(res.message);
 			}
@@ -79,17 +79,20 @@ function page() {
 	}
 
 
+	const inputStyle = "p-2 rounded-xl border"
+
+
 	const renderForm = () => {
 		if (register) {
 			return (
 				<>
 			<h1 className="text-2xl font-bold">Register</h1>
 				<form className="flex flex-col gap-4 mt-4" onSubmit={handleRegister}>
-				<input name="name" type="text" placeholder="Name" className="p-2 rounded-lg border" />
-				<input name="email" type="email" placeholder="Email" className="p-2 rounded-lg border" />
-				<input name="password" type="password" placeholder="Password" className="p-2 rounded-lg border" />
-				<input name="confirmPassword" type="password" placeholder="Confirm Password" className="p-2 rounded-lg border" />
-				<button type="submit" className="bg-primary text-white p-2 rounded-lg mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Register"}</button>
+				<input name="name" type="text" placeholder="Name" className={inputStyle} />
+				<input name="email" type="email" placeholder="Email" className={inputStyle} />
+				<input name="password" type="password" placeholder="Password" className={inputStyle} />
+				<input name="confirmPassword" type="password" placeholder="Confirm Password" className={inputStyle} />
+				<button type="submit" className="bg-primary text-white h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Register"}</button>
 				</form>
 				<button onClick={() => setRegister(false)} className="text-primary underline">Login</button>
 				</>
@@ -99,9 +102,9 @@ function page() {
 			<>
 			<h1 className="text-2xl font-bold">Login</h1>
 				<form className="flex flex-col gap-4 mt-4" onSubmit={handleLogin}>
-				<input name="name" type="text" placeholder="Name" className="p-2 rounded-lg border" />
-				<input name="password" type="password" placeholder="Password" className="p-2 rounded-lg border" />
-				<button type="submit" className="bg-primary text-white p-2 rounded-lg mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Login"}</button>
+				<input name="name" type="text" placeholder="Name" className={inputStyle} />
+				<input name="password" type="password" placeholder="Password" className={inputStyle} />
+				<button type="submit" className="bg-primary text-white h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Login"}</button>
 				</form>
 				<button onClick={() => setRegister(true)} className="text-primary underline">Register</button>
 				</>

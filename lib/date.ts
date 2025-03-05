@@ -1,7 +1,6 @@
 export const formatDate = (date: Date) => {
-		const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
-		const day = localDate.toISOString().slice(0, 16).split("T")[0].split("-").splice(1).join("/");
-		const time = localDate.toISOString().slice(0, 16).split("T")[1];
+		const day = date.toISOString().slice(0, 16).split("T")[0].split("-").splice(1).join("/");
+		const time = date.toISOString().slice(0, 16).split("T")[1];
 		return `${day} ${time}`;
 
 }

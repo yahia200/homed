@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import { register_action, login_action } from '@/server_actions/auth'
 import { FiLoader } from 'react-icons/fi'
 
-function page() {
+function Page() {
 	const [register, setRegister] = useState(false)
 	const [loading, setLoading] = useState(false)
 
@@ -71,6 +71,7 @@ function page() {
 		await register_action(name, password, email).then(res => {
 			if (res.success) {
 				toast.success(res.message);
+				setRegister(false);
 			} else {
 				toast.error(res.message);
 			}
@@ -119,4 +120,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

@@ -4,9 +4,9 @@ export interface IPatient {
 	name: string;
 	password: string;
 	email: string;
-	bloodPressure: {high: number, low: number, date: Date}[];
+	bloodPressure: {systolic: number, diastolic: number, date: Date}[];
 	bloodSugar: {value: number, date: Date}[];
-	medications: {name: string, dosage: string, frequency: string, dates: Date[]}[];
+	medications: {name: string, dosage: string, frequency: string, dates: Date[], active: boolean}[];
 	createdAt: Date;
 	updatedAt: Date;
 }
@@ -27,11 +27,11 @@ const patientSchema = new Schema<IPatient>(
 		},
 		bloodPressure: [
 			{
-				high: {
+				systolic: {
 					type: Number,
 					required: true,
 				},
-				low: {
+				diastolic: {
 					type: Number,
 					required: true,
 				},
@@ -66,6 +66,11 @@ const patientSchema = new Schema<IPatient>(
 				frequency: {
 					type: String,
 					required: true,
+				},
+				active: {
+					type: Boolean,
+					required: true,
+					default: true,
 				},
 				dates: [
 					{

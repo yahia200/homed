@@ -8,7 +8,7 @@ class InvalidLoginError extends CredentialsSignin {
 	code = "Invalid identifier or password";
 }
 
-export const { signIn, signOut, auth } = NextAuth({
+export const {handlers, signIn, signOut, auth } = NextAuth({
 	providers: [
 		Credentials({
 			credentials: {
@@ -49,10 +49,12 @@ export const { signIn, signOut, auth } = NextAuth({
 		},
 		async session({ session, token }) {
 			if (session.user) {
+				await connectDB();
+				const patient = await Patient.findById(token.id);
 				session.user.id = token.id as string;
-				session.user.bloodPressure = token.bloodPressure;
-				session.user.bloodSugar = token.bloodSugar;
-				session.user.medications = token.medications;
+				session.user.bloodPressure = patient.bloodPressure;
+				session.user.bloodSugar = patient.bloodSugar;
+				session.user.medications = patient.medications;
 			}
 			return session;
 		},

@@ -1,0 +1,26 @@
+import React from "react";
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
+import { Medication } from "@/types";
+import MedicationForm from "@/components/MedicationForm";
+import MedicationContainer from "@/components/MedicationContainer";
+
+async function page() {
+	const session = await auth();
+	if (!session || !session.user) redirect("/");
+
+
+	return (
+		<div className="mt-8 space-y-6">
+			<div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-foreground rounded-xl w-11/12 mx-auto p-4">
+			{ session.user.medications.map((med: Medication) => (
+				<MedicationContainer med={med} key={med.name} />	
+			))
+			}
+			</div>
+		<MedicationForm />
+		</div>
+	);
+}
+
+export default page;

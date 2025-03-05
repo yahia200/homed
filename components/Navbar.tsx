@@ -1,5 +1,6 @@
 import React from 'react'
 import { auth, signOut } from '@/auth'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 async function Navbar() {
@@ -7,7 +8,7 @@ async function Navbar() {
 	if (!session || !session.user) return null;
   return (
     <nav className="bg-primary flex justify-between py-2 px-4">
-		<h1 className="text-white font-bold">{session.user.name}</h1>
+		<Link className="text-white font-bold" href="/home">{session.user.name}</Link>
 			<form action={async () => {
 			'use server'
 			await signOut();

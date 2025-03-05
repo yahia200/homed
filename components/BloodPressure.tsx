@@ -55,7 +55,7 @@ function BloodPressure({ visable, hide, id } : { visable: boolean, hide: () => v
 
   return vis && (
     <div className="h-screen w-screen z-[10] fixed top-0 left-0 flex justify-center items-center backdrop-filter backdrop-blur-sm bg-black/20">
-			<form onSubmit={submit} className="bg-white p-4 rounded-2xl w-fit p-4 mx-auto mt-20 flex flex-col space-y-4">
+			<form onSubmit={submit} className="bg-foreground p-4 rounded-2xl w-fit p-4 mx-auto mt-20 flex flex-col space-y-4">
 			<input name="systolic" type="text" placeholder="Systolic" className={inputStyle} />
 			<input name="diastolic" type="text" placeholder="Diastolic" className={inputStyle} />
 			<input name="date" type="datetime-local" className={inputStyle} defaultValue={getLocalDateTime()} />

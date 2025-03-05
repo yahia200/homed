@@ -52,7 +52,7 @@ function MedicationContainer({ med, minimal }: { med: Medication, minimal?: bool
 	return (
 		<div
 			key={med.name}
-			className="bg-secondary border border-background shadow-sm w-fit p-2 rounded-3xl mx-auto mb-2"
+			className="bg-secondary border border-background shadow-sm w-fit p-2 rounded-xl mx-auto mb-2"
 		>
 			<h1 className="text-center text-lg font-bold">{med.name}</h1>
 			<h2 className="text-center text-sm">{getNextTime()}</h2>

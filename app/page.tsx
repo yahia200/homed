@@ -112,7 +112,7 @@ function Page() {
 		)
 	};
   return (
-		<div className="bg-background h-screen w-screen flex justify-center items-center">
+		<div className="bg-linear-to-r/hsl from-background to-foreground h-screen w-screen flex justify-center items-center">
     <div className="bg-foreground h-fit w-fit p-4 text-center rounded-3xl">
 			{renderForm()}
 				</div>

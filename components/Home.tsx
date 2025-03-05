@@ -14,8 +14,8 @@ function Home({ user }: { user: User }) {
     setBloodPressureVisible(false);
   };
 
-  const containerStyle = "p-3 bg-foreground rounded-4xl relative shadow-md border border-foreground";
-  const titleStyle = "text-center text-lg font-bold";
+  const containerStyle = "p-3 bg-foreground rounded-lg relative shadow-md border border-foreground";
+  const titleStyle = "text-center text-2xl font-bold";
   const linkStyle =
     "bg-primary block mx-auto text-white rounded-xl px-2 py-1 w-[25ch] text-center";
 
@@ -44,6 +44,7 @@ function Home({ user }: { user: User }) {
       {/* Medications Section */}
       <div className={containerStyle}>
         <h1 className={titleStyle}>Medications</h1>
+				<hr className="my-3 border-black/30 w-1/2 mx-auto my-6"/>
 				<div className="grid sm:grid-cols-2 lg:grid-cols-3">
 					{user.medications.map((med) => (
 						<MedicationContainer key={med.name} med={med} minimal={true}/>
@@ -59,6 +60,7 @@ function Home({ user }: { user: User }) {
 				<Link className="px-3 text-white py-1 absolute right-3 top-3 text-sm bg-primary rounded-3xl" href="/pressure" >Edit</Link>
         <h1 className={titleStyle}>Blood Pressure</h1>
 
+				<hr className="my-3 border-black/30 w-1/2 mx-auto my-6"/>
         {/* Adjust chart height to prevent overlap */}
         <div className="w-full h-[30vh]">
           <ResponsiveContainer width="100%" height="100%">
@@ -86,6 +88,7 @@ function Home({ user }: { user: User }) {
       {/* Blood Sugar Section */}
       <div className={containerStyle}>
         <h1 className={titleStyle}>Blood Sugar</h1>
+				<hr className="my-3 border-black/30 w-1/2 mx-auto my-6"/>
         <Link href="#" className={linkStyle}>
           Add Blood Sugar
         </Link>

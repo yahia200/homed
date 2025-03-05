@@ -11,8 +11,8 @@ async function page() {
 				<div key={i} className="bg-foreground grid grid-cols-2 gap-4 w-fit rounded-xl p-4">
 					<span>{`Date: ${bp.date.toString().split('T')[0]}`}</span>
 					<span>{`Time: ${bp.date.toString().split('T')[1].split('.')[0]}`}</span>
-					<span className="text-red-500">{`Systolic: ${bp.systolic}`}</span>
-					<span className="text-blue-700">{`Diastolic: ${bp.diastolic}`}</span>
+					<span className="text-red-400">{`Systolic: ${bp.systolic}`}</span>
+					<span className="text-blue-400">{`Diastolic: ${bp.diastolic}`}</span>
 				</div>
 			))
 

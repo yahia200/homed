@@ -12,7 +12,7 @@ async function page() {
 
 	return (
 		<div className="mt-8 space-y-6">
-			<div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-foreground rounded-xl w-11/12 mx-auto p-4">
+			<div className="grid sm:grid-cols-2 lg:grid-cols-3 bg-foreground rounded-4xl w-11/12 mx-auto p-4 shadow-md border border-foreground">
 			{ session.user.medications.map((med: Medication) => (
 				<MedicationContainer med={med} key={med.name} />	
 			))

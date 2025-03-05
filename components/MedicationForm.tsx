@@ -29,7 +29,7 @@ function MedicationForm() {
   return (
     <div>
       {" "}
-      <form className="bg-foreground w-11/12 sm:w-fit p-2 rounded-xl mx-auto" onSubmit={onSubmit}>
+      <form className="bg-foreground shadow-md border border-foreground w-11/12 sm:w-fit p-3 rounded-4xl mx-auto" onSubmit={onSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-2">
           <div>
             <label>Medication Name</label>

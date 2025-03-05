@@ -3,9 +3,10 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-	--color-background: var(--color-sky-50);
-	--color-foreground: var(--color-blue-200);
-	--color-primary: var(--color-blue-500);
+	--color-background: var(--color-sky-300);
+	--color-foreground: var(--color-white);
+	--color-primary: var(--color-sky-500);
+	--color-secondary: var(--color-teal-200);
 }
 
 body {

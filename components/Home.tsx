@@ -14,7 +14,7 @@ function Home({ user }: { user: User }) {
     setBloodPressureVisible(false);
   };
 
-  const containerStyle = "p-3 bg-foreground rounded-2xl relative";
+  const containerStyle = "p-3 bg-foreground rounded-4xl relative shadow-md border border-foreground";
   const titleStyle = "text-center text-lg font-bold";
   const linkStyle =
     "bg-primary block mx-auto text-white rounded-xl px-2 py-1 w-[25ch] text-center";
@@ -56,7 +56,7 @@ function Home({ user }: { user: User }) {
 
       {/* Blood Pressure Section */}
       <div className={containerStyle}>
-				<Link className="px-3 text-white py-1 absolute right-2 top-2 text-sm bg-primary rounded-xl" href="/pressure" >Edit</Link>
+				<Link className="px-3 text-white py-1 absolute right-3 top-3 text-sm bg-primary rounded-3xl" href="/pressure" >Edit</Link>
         <h1 className={titleStyle}>Blood Pressure</h1>
 
         {/* Adjust chart height to prevent overlap */}

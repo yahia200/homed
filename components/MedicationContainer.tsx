@@ -65,7 +65,7 @@ function MedicationContainer({ med, minimal }: { med: Medication, minimal?: bool
 				/>
 				<button
 					type="submit"
-					className="bg-primary text-sm text-white rounded-xl px-2 py-1 mx-auto block mt-1 h-[3.5ch]"
+					className="bg-primary text-sm text-white rounded-xl w-full py-1 mx-auto block mt-2 h-[3.5ch]"
 				>
 					{loading ? <FiLoader className="animate-spin mx-auto" /> : "Take"}
 				</button>

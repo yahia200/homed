@@ -69,8 +69,8 @@ function Home({ user }: { user: User }) {
               <Tooltip />
               {/* Adjust legend position */}
               <Legend verticalAlign="top" wrapperStyle={{ paddingBottom: 10 }} />
-              <Line type="monotone" dataKey="systolic" stroke="red" strokeWidth={2} />
-              <Line type="monotone" dataKey="diastolic" stroke="blue" strokeWidth={2} />
+              <Line type="monotone" dataKey="systolic" stroke="#EC4899" strokeWidth={2} />
+              <Line type="monotone" dataKey="diastolic" stroke="#0EA5E9" strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
         </div>

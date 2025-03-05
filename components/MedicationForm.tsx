@@ -7,7 +7,7 @@ import { getLocalDateTime } from "@/lib/date";
 
 function MedicationForm() {
 	const [loading, setLoading] = useState(false);
-  const inputStyle = "block mx-auto rounded-xl px-2 py-1 w-[25ch] border";
+  const inputStyle = "block w-full rounded-xl px-2 py-1 w-[25ch] border";
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		setLoading(true);
@@ -29,8 +29,8 @@ function MedicationForm() {
   return (
     <div>
       {" "}
-      <form className="bg-foreground w-fit p-2 rounded-xl mx-auto" onSubmit={onSubmit}>
-        <div className="flex gap-4 mb-2">
+      <form className="bg-foreground w-11/12 sm:w-fit p-2 rounded-xl mx-auto" onSubmit={onSubmit}>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-2">
           <div>
             <label>Medication Name</label>
             <input
@@ -69,7 +69,7 @@ function MedicationForm() {
             />
           </div>
         </div>
-        <button type="submit" className="bg-primary block mx-auto text-white rounded-xl px-2 py-1 h-[3.5ch] w-[25ch] text-center active:bg-primary/50">
+        <button type="submit" className="bg-primary mt-4 block mx-auto text-white rounded-xl px-2 py-1 h-[3.5ch] w-[25ch] text-center active:bg-primary/50">
 					{loading ?
 					<FiLoader className="animate-spin mx-auto" />
 					:

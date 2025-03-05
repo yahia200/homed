@@ -8,10 +8,16 @@ import { Medication } from "@/types";
 
 function MedicationContainer({ med, minimal }: { med: Medication, minimal?: boolean }) {
 	const [loading, setLoading] = useState(false);
+	const [confirm, setConfirm] = useState(false);
 
 	const take = async (e: React.FormEvent<HTMLFormElement>) => {
-		setLoading(true);
 		e.preventDefault();
+		if (loading) return;
+		if (!confirm) {
+			setConfirm(true);
+			return;
+		}
+		setLoading(true);
 		const data = new FormData(e.currentTarget);
 		const date = data.get('date') as string;
 		const res = await takeMedication(med.name, date);
@@ -22,6 +28,7 @@ function MedicationContainer({ med, minimal }: { med: Medication, minimal?: bool
 			toast.error(res.message || "An error occurred");
 		}
 		setLoading(false);
+		setConfirm(false);
 	};
 
 
@@ -63,15 +70,27 @@ function MedicationContainer({ med, minimal }: { med: Medication, minimal?: bool
 					className={inputStyle}
 					defaultValue={getLocalDateTime()}
 				/>
+				<div className="w-full flex gap-2">
 				<button
 					type="submit"
 					className="bg-primary text-sm text-white rounded-xl w-full py-1 mx-auto block mt-2 h-[3.5ch]"
 				>
-					{loading ? <FiLoader className="animate-spin mx-auto" /> : "Take"}
+					{loading ? <FiLoader className="animate-spin mx-auto" /> : (confirm ? "Confirm" : "Take")}
 				</button>
+					{ confirm && (
+						<button
+							type="button"
+							onClick={() => setConfirm(false)}
+							className="bg-red-400 text-sm text-white rounded-xl w-full py-1 mx-auto block mt-2 h-[3.5ch]"
+						>
+							Cancel
+						</button>
+					)}
+				</div>
 			</form>
 		</div>
 	);
 }
 
 export default MedicationContainer;
+

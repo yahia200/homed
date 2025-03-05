@@ -62,7 +62,7 @@ function BloodPressure({ visable, hide, id } : { visable: boolean, hide: () => v
 			<button type="submit" className="bg-primary p-1 rounded-xl h-[4ch] text-white">
 				{loading ? <FiLoader className="mx-auto animate-spin" /> : "Submit"}
 				</button>
-			<button onClick={hide} className="bg-red-500 p-1 rounded-xl h-[4ch] text-white">Cancel</button>
+			<button type="button" onClick={hide} className="bg-red-500 p-1 rounded-xl h-[4ch] text-white">Cancel</button>
 			</form>
 		</div>
   )

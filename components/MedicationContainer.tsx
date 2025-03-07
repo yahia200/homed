@@ -9,10 +9,8 @@ import Image from "next/image";
 
 function MedicationContainer({
 	med,
-	minimal,
 }: {
 	med: Medication;
-	minimal?: boolean;
 }) {
 	const [loading, setLoading] = useState(false);
 	const [confirm, setConfirm] = useState(false);

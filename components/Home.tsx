@@ -56,7 +56,7 @@ function Home({ user }: { user: User }) {
 				<hr className="my-3 border-black/30 w-1/2 mx-auto my-6" />
 				<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
 					{user.medications.map((med) => (
-						<MedicationContainer key={med.name} med={med} minimal={true} />
+						<MedicationContainer key={med.name} med={med} />
 					))}
 				</div>
 				<Link href="/medication" className={linkStyle}>

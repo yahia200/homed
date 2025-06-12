@@ -19,6 +19,21 @@ export const addBloodPressure = async (patientId: string, systolic: number, dias
 	}
 }
 
+export const addBloodSugar = async (patientId: string, value: number, date: string) => {
+	try {
+		await connectDB();
+		const patient = await Patient.findById(patientId);
+		if (!patient) throw new Error('Patient not found');
+		patient.bloodSugar.push({ value, date });
+		await patient.save();
+		return {success: true};
+	} catch (error) {
+		const err = error as Error;
+		console.log("error adding blood sugar", err.message);
+		return {success: false, message: err.message};
+	}
+}
+
 export const addMedication = async (form : FormData) => {
 	try {
 		const session = await auth();

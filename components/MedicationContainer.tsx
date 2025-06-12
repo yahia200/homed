@@ -66,7 +66,7 @@ function MedicationContainer({
 	return (
 		<div
 			key={med.name}
-			className={`${isMissed() ? "bg-red-400" : "bg-secondary"} border border-background shadow-sm w-full p-2 rounded-xl mx-auto`}
+			className={`${isMissed() ? "border-missed" : "border-green-500"} border-3 bg-card border-background shadow-sm w-full p-2 rounded-3xl mx-auto`}
 		>
 			<h1 className="text-center text-xl font-bold">{med.name}</h1>
 			<h2 className="text-center text-xl">{getNextTime()}</h2>
@@ -120,7 +120,7 @@ function MedicationContainer({
 				<div className="w-full flex gap-2">
 					<button
 						type="submit"
-						className="bg-blue-400 text-sm text-white rounded-xl w-full py-1 mx-auto block h-[4ch] border border-black"
+						className="bg-btn-primary text-sm  rounded-2xl w-full py-1 mx-auto block h-[4ch] border border-black/30"
 					>
 						{loading ? (
 							<FiLoader className="animate-spin mx-auto" />
@@ -134,7 +134,7 @@ function MedicationContainer({
 						<button
 							type="button"
 							onClick={() => setConfirm(false)}
-							className="bg-red-400 border border-black text-sm text-white rounded-xl w-full py-1 mx-auto block h-[4ch]"
+							className="bg-red-400 border border-black/30 text-sm  rounded-md w-full py-1 mx-auto block h-[4ch]"
 						>
 							Cancel
 						</button>

@@ -87,33 +87,33 @@ function Page() {
 		if (register) {
 			return (
 				<>
-			<h1 className="text-2xl font-bold">Register</h1>
-				<form className="flex flex-col gap-4 mt-4" onSubmit={handleRegister}>
+			<h1 className="text-5xl font-bold mb-12">Register</h1>
+				<form className="grid grid-cols-2 gap-x-4 gap-y-6" onSubmit={handleRegister}>
 				<input name="name" type="text" placeholder="Name" className={inputStyle} />
 				<input name="email" type="email" placeholder="Email" className={inputStyle} />
 				<input name="password" type="password" placeholder="Password" className={inputStyle} />
 				<input name="confirmPassword" type="password" placeholder="Confirm Password" className={inputStyle} />
-				<button type="submit" className="bg-primary text-white h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Register"}</button>
+				<button type="submit" className="bg-btn-primary col-span-2 h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Register"}</button>
 				</form>
-				<button onClick={() => setRegister(false)} className="text-primary underline">Login</button>
+				<button onClick={() => setRegister(false)} className="text-black underline my-2">Login</button>
 				</>
 			)
 		}
 		return (
 			<>
-			<h1 className="text-2xl font-bold">Login</h1>
-				<form className="flex flex-col gap-4 mt-4" onSubmit={handleLogin}>
+			<h1 className="text-5xl font-bold mb-12">Login</h1>
+				<form className="grid grid-cols-1 gap-y-6" onSubmit={handleLogin}>
 				<input name="name" type="text" placeholder="Name" className={inputStyle} />
 				<input name="password" type="password" placeholder="Password" className={inputStyle} />
-				<button type="submit" className="bg-primary text-white h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Login"}</button>
+				<button type="submit" className="bg-btn-primary h-[4ch] p-2 rounded-xl mb-2">{loading ?  <FiLoader className="animate-spin mx-auto" /> : "Login"}</button>
 				</form>
-				<button onClick={() => setRegister(true)} className="text-primary underline">Register</button>
+				<button onClick={() => setRegister(true)} className="text-black underline my-2">Register</button>
 				</>
 		)
 	};
   return (
-		<div className="bg-linear-to-r/hsl from-background to-foreground h-screen w-screen flex justify-center items-center">
-    <div className="bg-foreground h-fit w-fit p-4 text-center rounded-3xl">
+		<div className="h-screen w-screen flex justify-center items-center bg-[url(/images/bg.png)] bg-cover bg-center">
+    <div className="bg-foreground h-fit w-1/2 p-4 text-center rounded-3xl border-2">
 			{renderForm()}
 				</div>
 		</div>

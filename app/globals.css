@@ -3,14 +3,18 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-	--color-background: #BCA37F;
-	--color-foreground: #EAD7BB88;
-	--color-primary: #B99470;
+	--color-background: #e8e8e8;
+  --color-navbar: #5271ff;
+	--color-foreground: #5271ff;
+	--color-primary: #9575CD;
 	--color-secondary: #FFF2D864;
+  --color-missed: #FF8A65;
+  --color-btn-primary: #ff9075;
+  --color-card: #FFFFFF;
 }
 
 body {
   color: var(--color-black);
-  background-image: linear-gradient(60deg, var(--color-background) 0%, var(--color-foreground) 100%);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  font-family: var(--font-funnel), Helvetica, sans-serif;
 }

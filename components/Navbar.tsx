@@ -7,8 +7,8 @@ async function Navbar() {
 	const session = await auth();
 	if (!session || !session.user) return null;
   return (
-    <nav className="bg-primary flex justify-between py-1 px-4 rounded-md w-[calc(100vw-2rem)] mx-auto mt-3">
-		<Link className="text-white font-bold" href="/home">{session.user.name}</Link>
+    <nav className="bg-navbar fixed z-10 flex items-center justify-between px-3 h-9 w-full">
+		<Link className="text-black font-bold" href="/home">{session.user.name}</Link>
 			<form action={async () => {
 			'use server'
 			await signOut();

@@ -77,7 +77,7 @@ function Home({ user }: { user: User }) {
       {/* Medications Section */}
       <div className={containerStyle}>
         <h1 className={titleStyle}>Medications</h1>
-        <hr className="my-3 border-black/30 w-1/2 mx-auto my-6" />
+        <hr className="border-black/30 w-1/2 mx-auto my-6" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {user.medications.map((med) => (
             <MedicationContainer key={med.name} med={med} />
@@ -161,7 +161,7 @@ function Home({ user }: { user: User }) {
       {/* Blood Sugar Section */}
       <div className={containerStyle}>
         <h1 className={titleStyle}>Blood Sugar</h1>
-        <hr className="my-3 border-black/30 w-1/2 mx-auto my-6" />
+        <hr className=" border-black/30 w-1/2 mx-auto my-6" />
         <div className="w-full h-[30vh]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart

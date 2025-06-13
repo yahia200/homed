@@ -29,7 +29,7 @@ function MedicationForm() {
   return (
     <div>
       {" "}
-      <form className="bg-foreground shadow-md border border-foreground w-11/12 sm:w-fit p-3 rounded-4xl mx-auto" onSubmit={onSubmit}>
+      <form className="bg-foreground shadow-md border border-foreground sm:w-11/12 w-fit p-5 rounded-4xl mx-auto" onSubmit={onSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-2">
           <div>
             <label>Medication Name</label>
@@ -69,7 +69,7 @@ function MedicationForm() {
             />
           </div>
         </div>
-        <button type="submit" className="bg-primary mt-4 block mx-auto text-white rounded-xl px-2 py-1 h-[3.5ch] w-[25ch] text-center active:bg-primary/50">
+        <button type="submit" className="bg-btn-primary mt-6 block mx-auto text-white rounded-xl px-2 py-1 h-[3.5ch] w-[25ch] text-center active:bg-primary/50">
 					{loading ?
 					<FiLoader className="animate-spin mx-auto" />
 					:

@@ -90,12 +90,12 @@ function Home({ user }: { user: User }) {
 
       {/* Blood Pressure Section */}
       <div className={containerStyle}>
-        <Link
+        {/* <Link
           className="px-3 py-1 absolute right-3 top-3 text-sm bg-btn-primary rounded-3xl border border-black"
           href="/pressure"
         >
           Edit
-        </Link>
+        </Link> */}
         <h1 className={titleStyle}>Blood Pressure</h1>
 
         <hr className="border-black/30 w-1/2 mx-auto my-6" />
